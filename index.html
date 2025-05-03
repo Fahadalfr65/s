@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<div class="text">Fuck you خرا عليك ياكلبي</div>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝘥𝘪𝘴𝘤𝘰𝘳𝘥.𝘨𝘨/𝘑𝘦𝘙𝘣𝘴𝘬𝘙𝘤</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #b400f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .image-container img {
+            width: 450px; 
+            height: 1;
+            border: px solid #b400f7; 
+            border-radius: 31px;
+            box-shadow: 0 0 30px rgba(180, 0, 247 ); 
+        }
+        .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #b400f7; 
+            text-shadow: 0px 0px 8px #b400f7, 0px 0px 15px #b400f7, 0px 0px 25px #b400f7; 
+            letter-spacing: 3.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 20px;
+            font-size: 3em; 
+            color: #f70000; 
+            text-shadow: 0px 0px 8px #f70000, 0px 0px 15px #f70000, 0px 0px 25px #f70000; 
+            letter-spacing: 3.5px; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="image-container">
+    <img src="https://a.top4top.io/p_3410ugjz21.png" alt="Discord Image">
+   
+    </div>
+    <audio autoplay loop>
+        <source src="https://h.top4top.io/m_3410mw4s91.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="info" id="ip-info">
+        <strong>IP: <span id="ip"></span></strong><br>
+        <span><strong>City:</strong> <span id="city"></span></span><br>
+        <span><strong>Region:</strong> <span id="region"></span></span><br>
+        <span><strong>Country:</strong> <span id="country"></span></span><br>
+        <span><strong>Location:</strong> <span id="loc"></span></span><br>
+        <span><strong>Organization:</strong> <span id="org"></span></span><br>
+        <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+    </div>
+    <div class="text">ℬ𝓎 ℱ𝒶𝒽𝒶𝒹 & 7𝓂𝒶𝓏</div>
+
+    <script>
+         fetch('https://ipinfo.io/json')
+        .then(response => response.json())
+        .then(data => {
+            delete data.readme;
+            const infoDiv = document.getElementById('ip-info');
+            infoDiv.textContent = JSON.stringify(data, null, 2);
+        });
+    </script>
+</body>
+</html>
