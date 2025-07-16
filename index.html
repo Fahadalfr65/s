@@ -2,127 +2,80 @@
 <html lang="en">
 <head>
 
-<div class="text rainbow-text">discord.gg/ua3 ϟ</div>
+<div class="text"></div>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>discord.gg/ua3</title>
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
-        background-size: cover;
-        font-family: 'Courier New', Courier, monospace;
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        flex-direction: column;
-        text-align: center;
-    }
-    .image-container img {
-        width: 450px; 
-        height: 1;
-        border: px solid #0059ff; 
-        border-radius: 30px;
-        box-shadow: 0 0 30px rgba(); 
-    }
-
-    .info {
-        margin-top: 20px;
-        font-size: 1.5em;
-        color: #ffffff; 
-        text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-        letter-spacing: 3.5px; 
-        white-space: pre-wrap;
-    }
-    .text {
-        margin-top: 20px;
-        font-size: 3em; 
-        color: #ffffff; 
-        text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-        letter-spacing: 3.5px; 
-    }
-
-    /* تأثير رينبو */
-    .rainbow-text {
-        background-image: linear-gradient(
-            90deg,
-            red,
-            orange,
-            yellow,
-            green,
-            cyan,
-            blue,
-            violet,
-            red
-        );
-        background-size: 400%;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: rainbow 3s linear infinite;
-    }
-
-    @keyframes rainbow {
-        0% {
-            background-position: 0% 50%;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoFahad</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://cdn.discordapp.com/attachments/1368505472503517254/1394941757845667870/ezgif-8c25488084b0f8.gif?ex=6878a43f&is=687752bf&hm=51f1925fdba4eeda8ad1b0ad25db26a699dd06558fc5b392d0bf9a58dcf458a9&') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
         }
-        100% {
-            background-position: 100% 50%;
+        .image-container img {
+            width: 450px; 
+            height: 1;
+            border: px solid #ffffff; 
+            border-radius: 31px;
+            box-shadow: 0 0 30px rgba(255, 0, 255 ); 
         }
-    }
-</style>
+
+        .info {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #ffffff; 
+            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
+            letter-spacing: 3.5px; 
+            white-space: pre-wrap;
+        }
+        .text {
+            margin-top: 20px;
+            font-size: 3em; 
+            color: #ffffff; 
+            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
+            letter-spacing: 3.5px; 
+        }
+
+    </style>
 </head>
 <body>
-<div class="image-container">
-    <img src="https://media.discordapp.net/attachments/1367465665266454539/1367585807388508180/IMG_3516.gif?ex=6841f208&is=6840a088&hm=76e11ec6608c8425145662477c86c4e80f5b4e7c84b234990b63a72b4c6cae58&" alt="">
-</div>
+    <div class="image-container">
+    <img src="https://media.discordapp.net/attachments/1352469816652599409/1388921290617786459/raw.png?ex=687683c0&is=68753240&hm=e67b313294a11844c343eb2e502b8cac32c8f5190c6027813b6401e2e5118225&format=webp&quality=lossless&width=684&height=684%22%2C&" alt="">
+   
+    </div>
+    <audio autoplay loop>
+        <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1394944403369361428/5168325831667222178.ogg?ex=6878a6b6&is=68775536&hm=7996576992c9c33a24f756693c9575382f6fc425845f040d25054edc35564ec0&" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<audio autoplay loop>
-    <source src="https://cdn.discordapp.com/attachments/1361773811955007729/1361773889251967017/Falcon_Rp.mp4?ex=6841e543&is=684093c3&hm=65f47195c4ce077fcabc78429fcc27990ce398d8ae3ca96437df333fa0ffd8ae&" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+    <div class="info" id="ip-info">
+        <strong>Your IP: <span id="ip"></span></strong>
+    </div>
 
-<div class="info rainbow-text" id="ip-info">
-    <strong>IP: <span id="ip"></span></strong><br>
-    <span><strong>City:</strong> <span id="city"></span></span><br>
-    <span><strong>Region:</strong> <span id="region"></span></span><br>
-    <span><strong>Country:</strong> <span id="country"></span></span><br>
-    <span><strong>Location:</strong> <span id="loc"></span></span><br>
-    <span><strong>Organization:</strong> <span id="org"></span></span><br>
-    <span><strong>Timezone:</strong> <span id="timezone"></span></span>
-</div>
 
-<div class="text rainbow-text">Hxx7Fahad ϟ</div>
 
-<script>
-  window.onload = () => {
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-    window.open("https://discord.gg/ZtkHYxVD47", "_blank");
-  };
 </script>
-
-
 <marquee>
-    <font size="7"><b><span class="rainbow-text">By Fahad</span></b></font>
-</marquee>
+              <font size="5">
+                <b></b> https://discord.gg/wAhHAYC5wG
+            </font></marquee>
 
-<script>
-    fetch('https://ipinfo.io/json')
-    .then(response => response.json())
-    .then(data => {
-        delete data.readme;
-        const infoDiv = document.getElementById('ip-info');
-        infoDiv.textContent = JSON.stringify(data, null, 2);
-    });
-</script>
+    <script>
+        fetch('https://ipinfo.io/json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('ip').textContent = data.ip;
+            });
+    </script>
 </body>
 </html>
