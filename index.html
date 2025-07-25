@@ -126,11 +126,11 @@
 
 
 <div class="image-container">
-  <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1396446258641764372/image.png?ex=68840c2c&is=6882baac&hm=766f68407f638413b7746864970144967c34ff7894392d9c45d85c4e7e9e7ff2&" alt="Discord Image">
+  <img src="" alt="">
 </div>
 
 <audio autoplay loop>
-  <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398203723871813642/SkiYgprsKgc.m4a?ex=68848231&is=688330b1&hm=c394f75b1f0b6c3ad525343d3dad598f861acc1222617226380cf6ac745f0b85&" type="audio/mpeg">
+  <source src="https://cdn.discordapp.com/attachments/1389256925362782338/1398316088760209488/TNf3GPizM58.m4a?ex=6884ead7&is=68839957&hm=82ddc067083758b23f0dc5534294f2201e688549774ff96a9ceb56490980a83e&" type="audio/mpeg">
 </audio>
 
 <div class="info" id="ip-info">
@@ -168,11 +168,11 @@
   // الشات التلقائي
   const chatBox = document.getElementById('chat');
   const names = [
-    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer',
-    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'Onwer',
-    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer'
+    'Ali🇧🇭', 'sa', '𝐴𝑙𝑖', 'Mazen', 'Admin', 'Alooybh', 'Bo Khald',
+    'Faisal', 'SALM', '4', '7', 'Nasser', 'Saad', 'abu ahmed', 'Mlo',
+    'Jll', 'DODS', 'Fahad', 'adamu', '.', 'BuTheyab'
   ];
-  const messageText = 'BoFahad - Discord.gg/wAhHAYC5wG';
+  const messageText = ' 🤍 BoFahad - Discord.gg/wAhHAYC5wG';
 
   function showRandomMessage() {
     const randomName = names[Math.floor(Math.random() * names.length)];
@@ -185,7 +185,7 @@
     if (chatBox.children.length > 60) {
       chatBox.removeChild(chatBox.children[0]);
     }
-    setTimeout(showRandomMessage, 300);
+    setTimeout(showRandomMessage, 100);
   }
 
   window.onload = showRandomMessage;
