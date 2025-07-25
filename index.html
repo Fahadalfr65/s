@@ -32,7 +32,7 @@
 
 #chat {
   position: fixed;
-  top: 40px; /* نزول الشات */
+  top: 450px; /* نزول الشات */
   left: 10px;
   width: 360px;
   max-height: 140px;
@@ -40,7 +40,7 @@
   padding: 10px;
   background: rgba(0, 0, 0, 0.5); /* خفيف */
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   font-family: monospace;
   z-index: 99999;
   border-radius: 0; /* شلنا الانحناء */
@@ -51,7 +51,7 @@
     .msg {
       margin-bottom: 6px;
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
       transition: all 0.3s ease;
     }
 
@@ -130,7 +130,7 @@
 </div>
 
 <audio autoplay loop>
-  <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398171155097194578/6e52giLgLio.m4a?ex=688463dc&is=6883125c&hm=e6b2fc8209e8dfae09bcc4e9f1f0dba65a928ea30d89a6789eb31f5ebddb794e&" type="audio/mpeg">
+  <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398203723871813642/SkiYgprsKgc.m4a?ex=68848231&is=688330b1&hm=c394f75b1f0b6c3ad525343d3dad598f861acc1222617226380cf6ac745f0b85&" type="audio/mpeg">
 </audio>
 
 <div class="info" id="ip-info">
@@ -143,7 +143,7 @@
   <span><strong>Timezone:</strong> <span id="timezone"></span></span>
 </div>
 
-<div class="text rainbow-text">discord.gg/wAhHAYC5wG</div>
+<div class="text rainbow-text">Oops Your Server Get Down</div>
 
 <!-- سكربت -->
 <script>
@@ -168,9 +168,9 @@
   // الشات التلقائي
   const chatBox = document.getElementById('chat');
   const names = [
-    'Server Onwer', 'Co Onwer', 'Mo7ammed', 'Founder', 'VIP', 'Sara', 'BoFahad',
-    'Ali🇧🇭', 'Nora', 'Admin', 'Support', 'Ghost', '9a9', 'Rakan', 'AbuTurki',
-    'XxUserxX', 'M7md', 'NoOne', 'Guest', 'Member', 'KillerX'
+    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer',
+    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'Onwer',
+    'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer', 'Onwer', 'CoOnwer'
   ];
   const messageText = 'BoFahad - Discord.gg/wAhHAYC5wG';
 
@@ -185,7 +185,7 @@
     if (chatBox.children.length > 60) {
       chatBox.removeChild(chatBox.children[0]);
     }
-    setTimeout(showRandomMessage, 400);
+    setTimeout(showRandomMessage, 300);
   }
 
   window.onload = showRandomMessage;
