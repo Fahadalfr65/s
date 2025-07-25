@@ -1,110 +1,203 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bo Fahad</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>discord.gg/wAhHAYC5wG</title>
+
   <style>
+    /* شاشة البداية */
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999999999999;
+    }
+
+    #splash video {
+      width: 9900px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+#chat {
+  position: fixed;
+  top: 40px; /* نزول الشات */
+  left: 10px;
+  width: 360px;
+  max-height: 140px;
+  overflow: hidden;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5); /* خفيف */
+  color: white;
+  font-size: 10px;
+  font-family: monospace;
+  z-index: 99999;
+  border-radius: 0; /* شلنا الانحناء */
+  border-left: none; /* شلنا الخط */
+}
+
+
+    .msg {
+      margin-bottom: 6px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+
+    .msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .name {
+      color: #00ffff;
+    }
+
+    /* الموقع الرئيسي */
     body {
       margin: 0;
       padding: 0;
-      background-color: black;
-      color: white;
+      background: url('https://i.pinimg.com/originals/51/ae/a3/51aea3393b8234a1e69d8713a0a58bc3.gif') no-repeat center center fixed;
+      background-size: cover;
       font-family: 'Courier New', monospace;
-      font-size: 1.4em;
+      color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      flex-direction: column;
+      text-align: center;
     }
 
-    #console {
+    .image-container img {
+      width: 450px;
+      border-radius: 30px;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-size: 1.5em;
+      text-shadow: 0px 0px 8px #fff, 0px 0px 15px #fff, 0px 0px 25px #fff;
+      letter-spacing: 3.5px;
       white-space: pre-wrap;
-      text-align: left;
     }
 
-    .red {
-      color: red;
+    .text {
+      margin-top: 20px;
+      font-size: 3em;
+      text-shadow: 0px 0px 8px #fff, 0px 0px 15px #fff, 0px 0px 25px #fff;
+      letter-spacing: 3.5px;
     }
 
-    .gray {
-      color: #ffffff;
+
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
-    .line {
-      display: block;
-    }
+    /* إخفاء شريط التمرير */
+    #chat::-webkit-scrollbar { display: none; }
+    #chat { -ms-overflow-style: none; scrollbar-width: none; }
+
   </style>
 </head>
 <body>
-  <div id="console"></div>
 
-  <audio autoplay loop>
-    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398171155097194578/6e52giLgLio.m4a?ex=688463dc&is=6883125c&hm=e6b2fc8209e8dfae09bcc4e9f1f0dba65a928ea30d89a6789eb31f5ebddb794e&" type="audio/mpeg">
-  </audio>
+<!-- شاشة البداية -->
+<div id="splash">
+  <video autoplay muted playsinline onended="hideSplash()">
+    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1396451282876891178/Untitled_video_-_Made_with_Clipchamp_2.mp4?ex=688410da&is=6882bf5a&hm=ccb028cd9c3b6dd9044cffb3fce3451933d8058d4ec1382f54003ae05993d375&" type="video/mp4">
+  </video>
+</div>
+
+<!-- الشات -->
+<div id="chat"></div>
 
 
-  <script>
-    const lines = [
-      { text: '[+] AL-Qrni Is Now Into Your System...', class: '' },
-      { text: '[+] Dear admin', class: '' },
-      { text: '[+] Your anti cheat Is So SLow', class: '' },
-      { text: '[+] AL-Qrni  Discord.gg/wAhHAYC5wG', class: 'red' },
-      { text: '[+] انت مرا سبك...', class: '' }
-    ];
+<div class="image-container">
+  <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1396446258641764372/image.png?ex=68840c2c&is=6882baac&hm=766f68407f638413b7746864970144967c34ff7894392d9c45d85c4e7e9e7ff2&" alt="Discord Image">
+</div>
 
-    const consoleEl = document.getElementById("console");
-    let lineIndex = 0;
-    let charIndex = 0;
-    let span;
+<audio autoplay loop>
+  <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398171155097194578/6e52giLgLio.m4a?ex=688463dc&is=6883125c&hm=e6b2fc8209e8dfae09bcc4e9f1f0dba65a928ea30d89a6789eb31f5ebddb794e&" type="audio/mpeg">
+</audio>
 
-    function typeLine() {
-      if (lineIndex < lines.length) {
-        if (charIndex === 0) {
-          span = document.createElement("span");
-          span.className = `line ${lines[lineIndex].class}`;
-          consoleEl.appendChild(span);
-        }
+<div class="info" id="ip-info">
+  <strong>IP: <span id="ip"></span></strong><br>
+  <span><strong>City:</strong> <span id="city"></span></span><br>
+  <span><strong>Region:</strong> <span id="region"></span></span><br>
+  <span><strong>Country:</strong> <span id="country"></span></span><br>
+  <span><strong>Location:</strong> <span id="loc"></span></span><br>
+  <span><strong>Organization:</strong> <span id="org"></span></span><br>
+  <span><strong>Timezone:</strong> <span id="timezone"></span></span>
+</div>
 
-        const currentText = lines[lineIndex].text;
-        if (charIndex < currentText.length) {
-          span.textContent += currentText[charIndex];
-          charIndex++;
-          setTimeout(typeLine, 50);
-        } else {
-          charIndex = 0;
-          lineIndex++;
-          setTimeout(typeLine, 400);
-        }
-      } else {
-        fetch('https://ipinfo.io/json')
+<div class="text rainbow-text">discord.gg/wAhHAYC5wG</div>
+
+<!-- سكربت -->
+<script>
+  // شاشة البداية
+  setTimeout(() => {
+    document.getElementById('splash').style.display = 'none';
+  }, 2010);
+
+  // معلومات IP
+  fetch('https://ipinfo.io/json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('ip').textContent = data.ip;
+      document.getElementById('city').textContent = data.city;
+      document.getElementById('region').textContent = data.region;
+      document.getElementById('country').textContent = data.country;
+      document.getElementById('loc').textContent = data.loc;
+      document.getElementById('org').textContent = data.org;
+      document.getElementById('timezone').textContent = data.timezone;
+    });
+
+  // الشات التلقائي
+  const chatBox = document.getElementById('chat');
+  const names = [
+    'Server Onwer', 'Co Onwer', 'Mo7ammed', 'Founder', 'VIP', 'Sara', 'BoFahad',
+    'Ali🇧🇭', 'Nora', 'Admin', 'Support', 'Ghost', '9a9', 'Rakan', 'AbuTurki',
+    'XxUserxX', 'M7md', 'NoOne', 'Guest', 'Member', 'KillerX'
+  ];
+  const messageText = 'BoFahad - Discord.gg/wAhHAYC5wG';
+
+  function showRandomMessage() {
+    const randomName = names[Math.floor(Math.random() * names.length)];
+    const msg = document.createElement('div');
+    msg.className = 'msg';
+    msg.innerHTML = `<span class="name">[${randomName}]</span>: ${messageText}`;
+    chatBox.appendChild(msg);
+    setTimeout(() => msg.classList.add('show'), 30);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    if (chatBox.children.length > 60) {
+      chatBox.removeChild(chatBox.children[0]);
+    }
+    setTimeout(showRandomMessage, 400);
+  }
+
+  window.onload = showRandomMessage;
+</script>
+      <script>
+           fetch('https://ipinfo.io/json')
           .then(response => response.json())
           .then(data => {
-            printIP(`[+] Your IP: ${data.ip}`);
-          })
-          .catch(() => {
-            printIP('[+] Your IP: Unable to fetch');
+              delete data.readme;
+              const infoDiv = document.getElementById('ip-info');
+              infoDiv.textContent = JSON.stringify(data, null, 2);
           });
-      }
-    }
-
-    function printIP(ipText) {
-      let idx = 0;
-      const ipSpan = document.createElement("span");
-      ipSpan.className = "line gray";
-      consoleEl.appendChild(ipSpan);
-
-      function typeChar() {
-        if (idx < ipText.length) {
-          ipSpan.textContent += ipText[idx];
-          idx++;
-          setTimeout(typeChar, 50);
-        }
-      }
-
-      typeChar();
-    }
-
-    typeLine();
-  </script>
+</script>
 </body>
 </html>
