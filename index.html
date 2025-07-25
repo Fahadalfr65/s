@@ -1,81 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
+  <meta charset="UTF-8" />
+  <title>Bo Fahad</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      font-size: 1.4em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-<div class="text"></div>
+    #console {
+      white-space: pre-wrap;
+      text-align: left;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BoFahad</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://cdn.discordapp.com/attachments/1367465665266454539/1367585807388508180/IMG_3516.gif?ex=687c9cc8&is=687b4b48&hm=02d36e468638e264113a0b5b697cfde6d424da412a05de385970ce3e6444c4db&') no-repeat center center fixed;
-            background-size: cover;
-            font-family: 'Courier New', Courier, monospace;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-        }
-        .image-container img {
-            width: 450px; 
-            height: 1;
-            border: px solid #ffffff; 
-            border-radius: 31px;
-            box-shadow: 0 0 30px rgba(255, 0, 255 ); 
-        }
+    .red {
+      color: red;
+    }
 
-        .info {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-            letter-spacing: 3.5px; 
-            white-space: pre-wrap;
-        }
-        .text {
-            margin-top: 20px;
-            font-size: 3em; 
-            color: #ffffff; 
-            text-shadow: 0px 0px 8px #ffffff, 0px 0px 15px #ffffff, 0px 0px 25px #ffffff; 
-            letter-spacing: 3.5px; 
-        }
+    .gray {
+      color: #ffffff;
+    }
 
-    </style>
+    .line {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-    <div class="image-container">
-    <img src="https://media.discordapp.net/attachments/1352469816652599409/1388921290617786459/raw.png?ex=687683c0&is=68753240&hm=e67b313294a11844c343eb2e502b8cac32c8f5190c6027813b6401e2e5118225&format=webp&quality=lossless&width=684&height=684%22%2C&" alt="">
-   
-    </div>
-    <audio autoplay loop>
-        <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1395987732635058297/copy_95A723C0-E329-4BE1-8489-E065260C1954.mov?ex=687c7263&is=687b20e3&hm=3c92192c90d0676f73d7172a1eab466e2da100134007f27b0ea7dae5a95ae44b&" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+  <div id="console"></div>
 
-    <div class="info" id="ip-info">
-        <strong>Your IP: <span id="ip"></span></strong>
-    </div>
+  <audio autoplay loop>
+    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1398171155097194578/6e52giLgLio.m4a?ex=688463dc&is=6883125c&hm=e6b2fc8209e8dfae09bcc4e9f1f0dba65a928ea30d89a6789eb31f5ebddb794e&" type="audio/mpeg">
+  </audio>
 
 
+  <script>
+    const lines = [
+      { text: '[+] AL-Qrni Is Now Into Your System...', class: '' },
+      { text: '[+] Dear admin', class: '' },
+      { text: '[+] Your anti cheat Is So SLow', class: '' },
+      { text: '[+] AL-Qrni  Discord.gg/wAhHAYC5wG', class: 'red' },
+      { text: '[+] انت مرا سبك...', class: '' }
+    ];
 
-</script>
-<marquee>
-              <font size="5">
-                <b></b> https://discord.gg/wAhHAYC5wG
-            </font></marquee>
+    const consoleEl = document.getElementById("console");
+    let lineIndex = 0;
+    let charIndex = 0;
+    let span;
 
-    <script>
+    function typeLine() {
+      if (lineIndex < lines.length) {
+        if (charIndex === 0) {
+          span = document.createElement("span");
+          span.className = `line ${lines[lineIndex].class}`;
+          consoleEl.appendChild(span);
+        }
+
+        const currentText = lines[lineIndex].text;
+        if (charIndex < currentText.length) {
+          span.textContent += currentText[charIndex];
+          charIndex++;
+          setTimeout(typeLine, 50);
+        } else {
+          charIndex = 0;
+          lineIndex++;
+          setTimeout(typeLine, 400);
+        }
+      } else {
         fetch('https://ipinfo.io/json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('ip').textContent = data.ip;
-            });
-    </script>
+          .then(response => response.json())
+          .then(data => {
+            printIP(`[+] Your IP: ${data.ip}`);
+          })
+          .catch(() => {
+            printIP('[+] Your IP: Unable to fetch');
+          });
+      }
+    }
+
+    function printIP(ipText) {
+      let idx = 0;
+      const ipSpan = document.createElement("span");
+      ipSpan.className = "line gray";
+      consoleEl.appendChild(ipSpan);
+
+      function typeChar() {
+        if (idx < ipText.length) {
+          ipSpan.textContent += ipText[idx];
+          idx++;
+          setTimeout(typeChar, 50);
+        }
+      }
+
+      typeChar();
+    }
+
+    typeLine();
+  </script>
 </body>
 </html>
