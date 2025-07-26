@@ -32,7 +32,7 @@
 
 #chat {
   position: fixed;
-  top: 450px; /* نزول الشات */
+  top: 250px; /* نزول الشات */
   left: 10px;
   width: 360px;
   max-height: 140px;
@@ -169,8 +169,8 @@
   const chatBox = document.getElementById('chat');
   const names = [
     'Ali🇧🇭', 'sa', '𝐴𝑙𝑖', 'Mazen', 'Admin', 'Alooybh', 'Bo Khald',
-    'Faisal', 'SALM', '4', '7', 'Nasser', 'Saad', 'abu ahmed', 'Mlo',
-    'Jll', 'DODS', 'Fahad', 'adamu', '.', 'BuTheyab'
+    'Faisal', 'SALM', 'Abdullah', '7san', 'Nasser', 'Saad', 'abu ahmed', 'Mlo',
+    'Jll', 'DODS', 'Fahad', 'adamu', 'Saad', 'BuTheyab'
   ];
   const messageText = ' 🤍 BoFahad - Discord.gg/wAhHAYC5wG';
 
@@ -185,7 +185,7 @@
     if (chatBox.children.length > 60) {
       chatBox.removeChild(chatBox.children[0]);
     }
-    setTimeout(showRandomMessage, 100);
+    setTimeout(showRandomMessage, 200);
   }
 
   window.onload = showRandomMessage;
